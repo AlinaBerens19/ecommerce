@@ -1,0 +1,49 @@
+{% load static %}
+
+    <!-- header section -->
+    <header id="header" class="header">
+      <!-- navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a href="{% static 'index.html' %}" class="navbar-brand">
+          <img src="{% static 'img/logo.png' %}" alt="company logo" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#myNavbar"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item mx-2 nav-active">
+              <a href="{% url 'home' %}" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a href="{% url 'store' %}" class="nav-link">Store</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a href="{% static 'singleproduct.html' %}" class="nav-link">Single Product</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a href="{% static 'products.html' %}" class="nav-link">Products</a>
+            </li>
+          </ul>
+        </div>
+        <div class="navbar-icons d-none d-lg-flex">
+          <!-- single icon -->
+          <div class="navbar-icon mx-2"><i class="fas fa-search"></i></div>
+          <!-- end of single icon -->
+          <!-- single icon -->
+          <a href="{% static 'store.html' %}" class="navbar-icon mx-2 navbar-cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <div class="cart-items">2</div>
+          </a>
+          <!-- end of  single icon -->
+        </div>
+      </nav>
+      <!-- end of navbar -->
+
+    </header>
+    <!-- end of header section -->

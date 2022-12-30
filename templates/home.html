@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+{% include 'includes/service.html' %}
+
+<body>
+  <div class="banner d-flex align-items-center pl-3 pl-lg-5">
+          <div>
+            <h1 class="text-slanted text-capitalize mb-0">
+              Minimalist
+            </h1>
+            <h1 class="text-lowercase font-weight-bold">
+              interior style
+            </h1>
+            <a href="#" class="btn btn-yellow"> view collection </a>
+          </div>
+        </div>
+
+
+    <!-- home categories -->
+    <section id="home-categories" class="home-categories py-5">
+      <div class="container">
+        <div class="row">
+          <!-- categories title -->
+          <div class="col-10 mx-auto col-md-6 col-lg-3 align-self-center">
+            <h5 class="text-uppercase">
+              product categories
+            </h5>
+            <p class="text-muted text-capitalize">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore neque minus in error sunt laudantium totam nemo accusamus iure placeat.
+            </p>
+            <a href="" class="categorie-link text-weight-bold text-capitalize">
+              view all categories
+            </a>
+            <div class="categorie-underline">
+            </div>
+          </div>
+          <!-- end of categories title -->
+          <!-- main categories -->
+          <div class="col-10 mx-auto col-md-6 col-lg-9 my-3">
+            <div class="row">
+              {% for category in categories %}
+
+              <!-- single category -->
+              <div class="col-md-6 col-lg-3 my-3">
+                <div class="category-container">
+                  <img src="{{ category.categort_image.url }}" class="img-fluid category-img" alt="">
+                  <a href="products.html" class="category-link">
+                    <h6 class="text-uppercase mb-0">
+                      {{ category.category_name }}
+                    </h6>
+                    <p class="text-yellow mb-0">
+                      {{ number }} items
+                    </p>
+                  </a>
+                </div>
+              </div>
+              <!-- end of single category -->
+              {% endfor %}
+
+            </div>
+          </div>
+          <!-- end of main categories -->
+        </div>
+      </div>
+    </section>
+    <!-- end of home categories -->
+
+    <!-- home filler -->
+    <section id="home-filler">
+      <div class="container-fluid">
+        <div class="row home-filler align-items-center">
+          <div class="col-10 mx-auto text-center text-white">
+            <h4 class="text-uppercase font-weight-bold">
+              smart furniture collection
+            </h4>
+            <p class="text-capitalize">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, accusantium
+            </p>
+            <a href="#" class="text-capitalize collection-link text-yellow">
+              view collection
+            </a>
+            <div class="collection-underline"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end of home filler -->
+
+{% include 'includes/featured_section.html' %}
+
+</body>
+</html>
+
+{% include 'includes/partners.html' %}
+
+{% include 'includes/newsletter.html' %}
+
+{% endblock %}
